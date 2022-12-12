@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>h0 raportti</h1>
+  <h2> Mitä teit / minkä komennon annoit </h2>
+  <p> Katsoin aluksi selaimen (chrome) developer näkymästä Network välilehden omalta sivultani (hostattuna herokussa) ja sitten YouTuben sivuilta. </p>
+  </br>
+  <h2>Mitä tapahtui / mitä tuli vastaukseksi</h2>
+    <p>Selaimen ikkuna omalla sivullani näytti kivassa järjestyksessä mitä sivun osia on ladattu (Omalla sivulla html dokumentti, css tiedosto, favicon ikoni ja login sivu). 
+  </br> Chromen Network näkymä näyttää myös tietoja kuten statuksen, tyypin, Initiator (kuka yhteyttä on kutsunut olettaisin, esimerkiksi login sivua on kutsunut favivon.ico), tiedoston koon, ajan (kauanko kesti) ja Waterfall näkymän, joka kertoo lisätietoja hausta. 
+  </br> Esim. css tiedostoni ilmoittaa milloin lataus on asetettu jonoon, milloin lataus on aloitettu ,kauanko se kesti eri osissa. 
+</br> Waterfallissa on myös graafi, johon on merkattu vihreällä latauksen osiot (Waiting for server response, Content Download). 
+    </br>  Omalla sivullani näkyvät yhteydet olivat hieman outoja 
+		</br>  - kutsuu favicon.icoa, jota ei ole olemassa 
+		</br>	- favicon.ico kutsuu login sivua, koska en ole merkannut sitä hyväksytyksi sivuksi kirjautumatta (joka tarkoittaa redirectiä login sivulle)
+	</br> Kirjautumisen ja pois kirjautumisen jälkeen yhteydet katosivat. Kirjautuneena näkyi, ettei favicon.icoon voitu ottaa yhteyttä, jonka jälkeen se ei sitä yrittänytkään. En tiedä onko herokun juttua vai ei katsomatta syvemmin. 
+</p>
+  <h2> Mitä teit / minkä komennon annoit </h2>
+    <p>Wiresharkilla testatessa valitsin WLAN yhteyden ja painoin starttia. </p>
+  <h2>Mitä tapahtui / mitä tuli vastaukseksi</h2>
+    <p>WLAN yhteys seuraa oman tietokoneeni yhteyksiä WLAN yhteyksien kanssa (esim juurikin google.com, joka minulla on auki)
+</br>
+		- Näytölle ilmestyy paljon IP osoitteita, joista ilmoitetaan aika, source (osoite), destination, protocol (protokolla, esim TCP näkyy välillä) </br>
+		- Esimerkiksi Standard query history.google.com (DNS protokolla, olisiko kysynyt googlen historian DNS?) </br>
+		- Näkyy myös paljon Receiver reportteja, RTCP protokollasta. Taitavat olla vastaanottoraportteja onnistuneesta lähetyksestä tiedonsiirrossa). </p>
+</body>
+</html>
